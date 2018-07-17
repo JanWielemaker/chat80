@@ -40,6 +40,7 @@
             chat_optimize/2,			% +QueryIn, -Query
             chat_answer/2,                      % +Query, -Answer
 
+            chat_example/3,                     % ?Nr, ?Sentence, ?Correct
             chat_print_tree/1,                  % +Tree
 
             test_chat/0,
@@ -111,3 +112,11 @@ chat_answer(Query, Answer) :-
 
 chat_print_tree(Tree) :-
     print_tree(Tree).
+
+%!  chat_example(?Nr, ?Sentence, ?Correct)
+%
+%   True when Nr is the (integer) id of the tokenized Sentence and
+%   Correct is the correct answer.
+
+chat_example(Nr, Sentence, Correct) :-
+    ed(Nr, Sentence, Correct).

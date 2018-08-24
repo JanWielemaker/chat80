@@ -1,6 +1,6 @@
 /* @(#)chattop.pl	26.1 5/13/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -248,7 +248,7 @@ show_results(N,Status,Times) :-
 	; otherwise ->
 		tab(2), write(Status), nl
 	).
-	
+
 show_format( '~t~w~10+ |~t~w~12+~t~w~10+~t~w~10+~t~w~10+~t~w~10+' ).
 
 
@@ -287,7 +287,7 @@ process(Sentence,Answer,[Time1,Time2,Time3,Time4,TotalTime]) :-
 	statistics(runtime, [T7, _]),
 	Time4 is T7 - T6,
 	TotalTime is Time1 + Time2 + Time3 + Time4.
-   
+
 
 	% Version of answer/1 from TALKR which returns answer
 answer((answer([]):-E),[B]) :- !, holds(E,B).
@@ -421,8 +421,8 @@ report_item(expr,Item) :-
    write_tree(Item), nl.
 report_item(tree,Item) :-
    print_tree(Item), nl.
-report_item(quant,Item) :-
-   pp_quant(Item,2), nl.
+%report_item(quant,Item) :-
+%   pp_quant(Item,2), nl.
 
 quote(A&R) :-
    atom(A), !,
@@ -503,7 +503,7 @@ inv_map_list(K0,T,V,M,R) :-
 
 drop_eq('$VAR'(I),'$VAR'(J),V,M,true) :- !,
  ( I=\=J, !,
-      irev(I,J,K,L), 
+      irev(I,J,K,L),
       arg(K,M,L),
       arg(K,V,X),
       arg(L,V,X);

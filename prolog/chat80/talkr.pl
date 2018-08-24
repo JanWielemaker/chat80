@@ -7,7 +7,7 @@
 */
 /* Simplifying and executing the logical form of a NL query. */
 
-:-public write_tree/1, answer/1, satisfy/1.
+:-public write_tree/1, answer/1, satisfy//2.
 
 :-mode write_tree(+).
 :-mode wt(+,+).

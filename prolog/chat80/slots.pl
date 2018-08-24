@@ -1,6 +1,6 @@
 /* @(#)slots.pl	24.1 2/23/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -125,10 +125,6 @@ i_adj(sup(Op0,adj(Adj)),Type-X,Type-V,_,
    inverse(Op0,Sign,Op),
    i_sup_op(Op,F),
    attribute(Adj,Type,X,_,Y,P).
-i_adj(adj(Adj),TypeX-X,T,T,_,
-      Head,Head,quant(void,TypeX-Y,~P,~Q&Pred,[],_),Pred) :-
-   attribute(Adj,TypeX,X,_,Y,P),
-   standard(Adj,TypeX,Y,Q).
 
 i_s(s(Subj,Verb,VArgs,VMods),Pred,Up,Id) :-
    i_verb(Verb,P,Tense,Voice,Neg,Slots0,XA0,Meta),
@@ -196,9 +192,6 @@ verb_slot(arg(SCase,NP),
    i_np(NP,X,Q,Up,Id,unit,XArg0,XArg),
    in_slot(Slots0,Case,X,Id,Slots,_),
    deepen_case(SCase,Case).
-verb_slot(adverb(Adv),XA,XA,Slots0,Slots,[~P|Args],Args,[],Id) :-
-   adv_template(Adv,Case,X,P),
-   in_slot(Slots0,Case,X,Id,Slots,_).
 verb_slot(arg(pred,AP),XA,XA,Slots0,Slots,Args0,Args,Up,Id) :-
    in_slot(Slots0,pred,X,Id,Slots,_),
    i_pred(AP,X,Args0,Args,Up,Id).
@@ -301,10 +294,6 @@ verb_kind(intrans,Verb,TypeS,S,Pred,Slots) :-
 verb_kind(trans,Verb,TypeS,S,Pred,
       [slot(dir,TypeD,D,SlotD,free)|Slots]) :-
    trans(Verb,TypeS,S,TypeD,D,Pred,Slots,SlotD,_).
-verb_kind(ditrans,Verb,TypeS,S,Pred,
-      [slot(dir,TypeD,D,SlotD,free),
-       slot(ind,TypeI,I,SlotI,free)|Slots]) :-
-   ditrans(Verb,TypeS,S,TypeD,D,TypeI,I,Pred,Slots,SlotD,SlotI,_).
 
 deepen_case(prep(at),time).
 deepen_case(s_subj,dir).

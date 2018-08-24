@@ -1,6 +1,6 @@
 /* @(#)chat.pl	24.1 2/23/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -37,7 +37,7 @@
 :- consult(talkr).		% query evaluation
 :- consult(ndtabl).		% relation info.
 :- consult(aggreg).		% aggregation operators
-:- consult(world0).    		% geographic data base
+:- consult(world0).		% geographic data base
 :- consult(rivers).
 :- consult(cities).
 :- consult(countr).
@@ -47,6 +47,5 @@
 
 
 save_chat :-
-   save(chat),
-   display('Hi, Chat here ...'), ttynl,
-   hi.
+   qsave_program(chat, [goal(hi)]).
+

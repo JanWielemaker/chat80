@@ -1,6 +1,6 @@
 /* @(#)world0.pl	24.1 2/23/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -45,7 +45,7 @@ database(longitude(X,Y)) :- longitude(X,Y).
 database(northof(X,Y)) :- northof(X,Y).
 database(ocean(X)) :- ocean(X).
 database(place(X)) :- place(X).
-database(person(X)) :- person(X).
+%database(person(X)) :- person(X).
 database(population(X)) :- population(X).
 database(population(X,Y)) :- population(X,Y).
 database(region(X)) :- region(X).

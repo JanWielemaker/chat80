@@ -7,7 +7,7 @@
 */
 /* Simplifying and executing the logical form of a NL query. */
 
-:-public write_tree/1, answer/1, satisfy/1.
+:-public write_tree/1, answer/1.
 
 :-mode write_tree(+).
 :-mode wt(+,+).
@@ -129,7 +129,7 @@ exceptionto(P) :-
    exception(P1).
 
 exception(P) :- database(P), !, fail.
-exception(P).
+exception(_P).
 
 pickargs(0,_,_) :- !.
 pickargs(N,P,P1) :- N1 is N-1,
@@ -138,7 +138,7 @@ pickargs(N,P,P1) :- N1 is N-1,
    arg(N,P1,X),
    pickargs(N1,P,P1).
 
-pick([X|S],X).
+pick([X|_],X).
 pick([_|S],X) :- !, pick(S,X).
 pick([],_) :- !, fail.
 pick(X,X).

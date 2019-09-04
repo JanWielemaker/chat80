@@ -1,6 +1,6 @@
 /* @(#)newg.pl	24.1 2/23/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -349,7 +349,7 @@ sup_phrase(sup(B,C),D,E,F,G) :-
 
 comp_phrase(comp(B,C,D),E,F,G,H,I) :-
    comp(B,C,F,J,H,K),
-   np_no_do_trace(L),
+%  np_no_do_trace(L),		% JW: Not defined
    prep_case(M),
    np(D,N,M,O,compl,L,E,J,G,K,I).
 

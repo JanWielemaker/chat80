@@ -1,6 +1,6 @@
 /* @(#)slots.pl	24.1 2/23/88 */
 
-/* 
+/*
 	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
 
 			   All Rights Reserved
@@ -15,7 +15,7 @@ i_sentence(imp(s(_,Verb,VArgs,VMods)),imp(V,Args)) :-
    conc(Up,VMods,Mods),
    i_verb_mods(Mods,_,[],Slots,Args0,Up,+0).
 
-i_np(there,Y,quant(void,X,~true,~true,[],Y),[],_,_,XA,XA).
+i_np(there,Y,quant(void,_X,~true,~true,[],Y),[],_,_,XA,XA).
 i_np(NP,Y,Q,Up,Id0,Index,XA0,XA) :-
    i_np_head(NP,Y,Q,Det,Det0,X,Pred,QMods,Slots0,Id0),
    held_arg(XA0,XA,Slots0,Slots,Id0,Id),
@@ -23,7 +23,7 @@ i_np(NP,Y,Q,Up,Id0,Index,XA0,XA) :-
 
 i_np_head(np(_,Kernel,_),Y,
       quant(Det,T,Head,Pred0,QMods,Y),
-      Det,Det0,X,Pred,QMods,Slots,Id) :-
+      Det,Det0,X,Pred,QMods,Slots,_Id) :-
    i_np_head0(Kernel,X,T,Det0,Head,Pred0,Pred,Slots),
    Type-_=Y, Type-_=T.
 
@@ -109,7 +109,7 @@ in_slot([Slot|Slots0],Case,X,Id,[Slot|Slots],F) :-
 
 slot_match(slot(Case,Type,X,Id,F),Case,Type-X,Id,F).
 
-i_adjs([],X,T,T,Head,Head,Pred,Pred).
+i_adjs([],_X,T,T,Head,Head,Pred,Pred).
 i_adjs([Adj|Adjs],X,T,T0,Head0,Head,Pred0,Pred) :-
    i_adj(Adj,X,T,T1,Head0,Head1,Pred0,Pred1),
    i_adjs(Adjs,X,T1,T0,Head1,Head,Pred1,Pred).
@@ -125,10 +125,11 @@ i_adj(sup(Op0,adj(Adj)),Type-X,Type-V,_,
    inverse(Op0,Sign,Op),
    i_sup_op(Op,F),
    attribute(Adj,Type,X,_,Y,P).
-i_adj(adj(Adj),TypeX-X,T,T,_,
-      Head,Head,quant(void,TypeX-Y,~P,~Q&Pred,[],_),Pred) :-
-   attribute(Adj,TypeX,X,_,Y,P),
-   standard(Adj,TypeX,Y,Q).
+%JW: Not called and standard/4 is undefined
+%i_adj(adj(Adj),TypeX-X,T,T,_,
+%      Head,Head,quant(void,TypeX-Y,~P,~Q&Pred,[],_),Pred) :-
+%   attribute(Adj,TypeX,X,_,Y,P),
+%   standard(Adj,TypeX,Y,Q).
 
 i_s(s(Subj,Verb,VArgs,VMods),Pred,Up,Id) :-
    i_verb(Verb,P,Tense,Voice,Neg,Slots0,XA0,Meta),
@@ -139,7 +140,7 @@ i_s(s(Subj,Verb,VArgs,VMods),Pred,Up,Id) :-
    i_verb_mods(Mods,Tense,XA,Slots,Args,Up,+Id),
    reshape_pred(Meta,QSubj,Neg,P,Args0,Pred).
 
-i_verb(verb(Root,Voice,Tense,Aspect,Neg),
+i_verb(verb(Root,Voice,Tense,_Aspect,Neg),
       P,Tense,Voice,Det,Slots,XArg,Meta) :-
    verb_template(Root,P,Slots,XArg,Meta),
    i_neg(Neg,Det).
@@ -196,9 +197,10 @@ verb_slot(arg(SCase,NP),
    i_np(NP,X,Q,Up,Id,unit,XArg0,XArg),
    in_slot(Slots0,Case,X,Id,Slots,_),
    deepen_case(SCase,Case).
-verb_slot(adverb(Adv),XA,XA,Slots0,Slots,[~P|Args],Args,[],Id) :-
-   adv_template(Adv,Case,X,P),
-   in_slot(Slots0,Case,X,Id,Slots,_).
+%JW: Commented out as adv_template/4 is not defined
+%verb_slot(adverb(Adv),XA,XA,Slots0,Slots,[~P|Args],Args,[],Id) :-
+%   adv_template(Adv,Case,X,P),
+%   in_slot(Slots0,Case,X,Id,Slots,_).
 verb_slot(arg(pred,AP),XA,XA,Slots0,Slots,Args0,Args,Up,Id) :-
    in_slot(Slots0,pred,X,Id,Slots,_),
    i_pred(AP,X,Args0,Args,Up,Id).
@@ -224,7 +226,7 @@ i_pred(pp(prep(Prep),NP),X,[~H,Q|As],As,Up,Id) :-
    adjunction(Prep,X,Y,H).
 
 i_adjoin(with,TS-S,TV-Y,[slot(prep(of),TV,Z,_,free)],
-	held_arg(poss,-Id,TS-S),
+	held_arg(poss,-_Id,TS-S),
 	Y=Z).
 i_adjoin(Prep,X,Y,[],[],P) :-
    adjunction(Prep,X,Y,P).
@@ -301,10 +303,11 @@ verb_kind(intrans,Verb,TypeS,S,Pred,Slots) :-
 verb_kind(trans,Verb,TypeS,S,Pred,
       [slot(dir,TypeD,D,SlotD,free)|Slots]) :-
    trans(Verb,TypeS,S,TypeD,D,Pred,Slots,SlotD,_).
-verb_kind(ditrans,Verb,TypeS,S,Pred,
-      [slot(dir,TypeD,D,SlotD,free),
-       slot(ind,TypeI,I,SlotI,free)|Slots]) :-
-   ditrans(Verb,TypeS,S,TypeD,D,TypeI,I,Pred,Slots,SlotD,SlotI,_).
+% JW: commented out as ditrans/12 is not defined
+%verb_kind(ditrans,Verb,TypeS,S,Pred,
+%      [slot(dir,TypeD,D,SlotD,free),
+%       slot(ind,TypeI,I,SlotI,free)|Slots]) :-
+%   ditrans(Verb,TypeS,S,TypeD,D,TypeI,I,Pred,Slots,SlotD,SlotI,_).
 
 deepen_case(prep(at),time).
 deepen_case(s_subj,dir).
@@ -336,7 +339,7 @@ index_args(D,I,_,D,I).
 indexable(the(plu)).
 indexable(all).
 
-my_index(index(I)).
+my_index(index(_I)).
 
 % ================================================================
 % Utilities

@@ -44,3 +44,7 @@
 :- consult(contai).
 :- consult(border).
 :- consult(chattop).		% top level control
+
+save_chat :-
+   qsave_program(chat, [goal(hi)]).
+

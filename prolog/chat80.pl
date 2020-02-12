@@ -46,6 +46,9 @@
             test_chat/0,
 	    rtest_chats/1                       % +Times
 	  ]).
+:- require([ (mode)/1,
+             display/1
+           ]).
 :- ensure_loaded(chat80/chat).
 
 /** <module> CHAT80 driver for SWI-Prolog

@@ -1,11 +1,25 @@
+/*  Copyright 1986-2020 David H. D. Warren and Fernando C. N. Pereira
 
-/* @(#)scopes.pl	24.1 2/24/88 */
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
 
-/* 
-	Copyright 1986, Fernando C.N. Pereira and David H.D. Warren,
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
 
-			   All Rights Reserved
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
+
 clausify(question(V0,P),(answer(V):-B)) :-
    quantify(P,Quants,[],R0),
    split_quants(question(V0),Quants,HQuants,[],BQuants,[]),
@@ -36,7 +50,7 @@ quantify(~P,Q,Q,P).
 quantify(P&Q,Above,Right,(S,T)) :-
    quantify(Q,Right0,Right,T),
    quantify(P,Above,Right0,S).
-   
+
 head_vars([],P,P,L,L0) :-
    strip_types(L0,L).
 head_vars([Quant|Quants],(P,R0),R,[X|V],V0) :-
@@ -51,7 +65,7 @@ extract_var(quant(_,_-X,P,_-X),P,X).
 
 chain_apply(Q0,P0,P) :-
    sort_quants(Q0,Q,[]),
-   chain_apply0(Q,P0,P).    
+   chain_apply0(Q,P0,P).
 
 chain_apply0([],P,P).
 chain_apply0([Q|Quants],P0,P) :-
@@ -300,4 +314,4 @@ bubble(_,D,D).
 
 
 conj_apply(and,P,Q,(P,Q)).
- 
+

@@ -1,0 +1,156 @@
+Mail from Fernando Pereira <fernando.pereira@gmail.com> giving permission
+to change the license for CHAT-80.  Included as proof.
+
+Return-Path: fernando.pereira@gmail.com
+Received: from localhost (LHLO mail.cwi.nl) (127.0.0.1) by mail.cwi.nl with
+ LMTP; Sun, 9 Aug 2020 04:41:07 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+	by mail.cwi.nl (Postfix) with ESMTP id 03B7539253
+	for <wielemak@cwi.nl>; Sun,  9 Aug 2020 04:41:07 +0200 (CEST)
+Authentication-Results: mail.cwi.nl (amavisd-new); dkim=pass (2048-bit key)
+	header.d=gmail.com
+Received: from mail.cwi.nl ([127.0.0.1])
+	by localhost (mail.cwi.nl [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id 2qvODkkn7M4Y for <wielemak@cwi.nl>;
+	Sun,  9 Aug 2020 04:41:06 +0200 (CEST)
+Received: from fester.cwi.nl (fester.cwi.nl [192.16.191.27])
+	by mail.cwi.nl (Postfix) with ESMTPS id A25E739170
+	for <wielemak@cwi.nl>; Sun,  9 Aug 2020 04:41:06 +0200 (CEST)
+Received: from filter2-til.mf.surf.net (filter2-til.mf.surf.net [194.171.167.218])
+	by fester.cwi.nl (8.14.4/8.12.3) with ESMTP id 0792f67f011999
+	for <J.Wielemaker@cwi.nl>; Sun, 9 Aug 2020 04:41:06 +0200
+Received: from mail-vk1-xa29.google.com (mail-vk1-xa29.google.com [IPv6:2607:f8b0:4864:20::a29])
+	by filter2-til.mf.surf.net (8.14.4/8.14.4/Debian-8+deb8u2) with ESMTP id 0792f4lt145911
+	(version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <J.Wielemaker@cwi.nl>; Sun, 9 Aug 2020 04:41:05 +0200
+Received: by mail-vk1-xa29.google.com with SMTP id x2so1178411vkd.8
+        for <J.Wielemaker@cwi.nl>; Sat, 08 Aug 2020 19:41:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to:cc;
+        bh=NPMXJXSdcFYbo9JCuRmkFmTJFj6dZn7k4ce9yf1UJ+A=;
+        b=rKiu5PT4A5zn2g41odt0Ot78B6s8hGZnn6ACZ9kToeYIs/H/+zNNR3lifM6ivB+l8e
+         QSlABPqqFrsOmVX7X2QdbKPukWCNkFVTPRjM5mhD6I4DJAVBarQcQ2nPZiCEZRhnfUPs
+         XnnijzKxtkR8/3ZIKQycPg7O7YTPkTQ1ht4fa+E6ikJZEtUC/TnL7h5AJLaEzucEk3A4
+         9PLsZbB0Ee7wi0JKYqxpbvBwG/zx6gfxthiK88NxawiZeLg4+eQCmmYfD+/YZtk3F86q
+         0+lbb1VfoteEAfb4gNHQswsvRbbJU2J4bauCQc7mjERhGr3tNZfhme57I14r13PAc4Et
+         cZsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+        bh=NPMXJXSdcFYbo9JCuRmkFmTJFj6dZn7k4ce9yf1UJ+A=;
+        b=UG0q3PGhicAovWy0hQrS5P/MppcqvWYgkQUz4nEUuJodSazq7LTi0C5DQ04V3hW7Gi
+         LZI7tFzYBHGeibzFHOpna/GHxMG+OFdM7L0S+8ut4nYmA7ArhFuABpuShDxEQvPam0hf
+         Kuuay4UfsVi9JJULc4IQZFTS1rhr+u/1FEI3g7gp3XCCsAQ0IPCsccf6H2b+12GxwYam
+         fLY27Tviye0BN/y6nfHcssaqJwwGMb6YpWBugAWjfHEtOH2PHVfYdmx2xv8YJHkH/peB
+         aJservtaWStRH8y0Lcfb1PKLQ0Kiuvv7MnxmX02eQRda0x2DiZ9AUo6oa0v7reQ/DwuK
+         GhKg==
+X-Gm-Message-State: AOAM532P0h8ljazEFEXZ0cru0v4ZJjdc0vWvA8qcVRAQV5Qo0yitnEG3
+	dxA0Lfrg2OijXHsPrDuECwRChRFeUpt5aoXhwsstTWkzAA==
+X-Google-Smtp-Source: ABdhPJxGI3OU2oofZb1LPQuzk0hqOOzmuUHdUb7GQmKKhoasv0PbTvzHyba4YHWEjqJqo4MGpT+1XTsd61mJxUm5gSU=
+X-Received: by 2002:a1f:3d97:: with SMTP id k145mr16412905vka.8.1596940863676;
+ Sat, 08 Aug 2020 19:41:03 -0700 (PDT)
+MIME-Version: 1.0
+From: Fernando Pereira <fernando.pereira@gmail.com>
+Date: Sat, 8 Aug 2020 19:40:52 -0700
+Message-ID: <CANEnMGZwfWFCYLOSRYJ5A75PQDLWTAg5p9spU-8RiAH89XwdmA@mail.gmail.com>
+Subject: Chat-80 license
+To: J.Wielemaker@cwi.nl
+Cc: Vijay Saraswat <vijay@saraswat.org>,
+        David Warren <davidhdwarren@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e8266e05ac68c43a"
+X-Spam-Score: -0.19 () [Tag at 5.00] FREEMAIL_FROM:0.001,HTML_MESSAGE:0.001,T_KAM_HTML_FONT_INVALID:0.01,SPF(pass:-0.2),DKIM(pass:0),DMARC(DMARC_POLICY_PASS:dry-run)
+X-CanIt-Geo: ip=2607:f8b0:4864:20::a29; country=US; latitude=37.7510; longitude=-97.8220; http://maps.google.com/maps?q=37.7510,-97.8220&z=6
+X-CanItPRO-Stream: cwi:j.wielemaker@cwi.nl (inherits from cwi:cwi-default,cwi:default,base:default)
+Received-SPF: pass (filter2-til.mf.surf.net: domain of fernando.pereira@gmail.com
+	designates 2607:f8b0:4864:20::a29 as permitted sender)
+	receiver=filter2-til.mf.surf.net; client-ip=2607:f8b0:4864:20::a29;
+	envelope-from=<fernando.pereira@gmail.com>; helo=mail-vk1-xa29.google.com;
+	identity=mailfrom
+X-Scanned-By: CanIt (www . roaringpenguin . com)
+
+--000000000000e8266e05ac68c43a
+Content-Type: text/plain; charset="UTF-8"
+
+Hi Jan,
+
+I hope all is well.
+
+Vijay Saraswat wrote to me recently asking whether Chat-80, which you have
+ported to SWI-Prolog, could have a more industry-friendly license. I
+checked with my local OSS license expert, and he recommended the MIT
+license. David and I would appreciate it if you could change the
+kind-of-license on GitHub with the one below.
+
+Best wishes
+
+-- Fernando
+
+Copyright 2020 David H. D. Warren and Fernando C. N. Pereira
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+--000000000000e8266e05ac68c43a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi Jan,<div><br></div><div>I hope all is well.=C2=A0</div>=
+<div><br></div><div>Vijay Saraswat wrote to me recently asking whether Chat=
+-80, which you have ported to SWI-Prolog, could have a more industry-friend=
+ly license. I checked with my local OSS license expert, and he recommended =
+the MIT license. David and I would appreciate it if you could change the ki=
+nd-of-license on GitHub with the one below.</div><div><br></div><div>Best w=
+ishes</div><div><br></div><div>-- Fernando</div><div><br></div><div><span i=
+d=3D"gmail-docs-internal-guid-a48400d1-7fff-24e8-0a61-7f115268104a"><p dir=
+=3D"ltr" style=3D"line-height:1.38;background-color:rgb(252,252,252);margin=
+-top:0pt;margin-bottom:0pt;padding:0pt 0pt 19pt"><span style=3D"font-size:1=
+0.5pt;font-family:Arial;color:rgb(68,68,68);background-color:transparent;fo=
+nt-variant-numeric:normal;font-variant-east-asian:normal;vertical-align:bas=
+eline;white-space:pre-wrap">Copyright 2020 David H. D. Warren and Fernando =
+C. N. Pereira</span></p><p dir=3D"ltr" style=3D"line-height:1.38;background=
+-color:rgb(252,252,252);margin-top:0pt;margin-bottom:0pt;padding:0pt 0pt 19=
+pt"><span style=3D"font-size:10.5pt;font-family:Arial;color:rgb(68,68,68);b=
+ackground-color:transparent;font-variant-numeric:normal;font-variant-east-a=
+sian:normal;vertical-align:baseline;white-space:pre-wrap">Permission is her=
+eby granted, free of charge, to any person obtaining a copy of this softwar=
+e and associated documentation files (the &quot;Software&quot;), to deal in=
+ the Software without restriction, including without limitation the rights =
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell c=
+opies of the Software, and to permit persons to whom the Software is furnis=
+hed to do so, subject to the following conditions:</span></p><p dir=3D"ltr"=
+ style=3D"line-height:1.38;background-color:rgb(252,252,252);margin-top:0pt=
+;margin-bottom:0pt;padding:0pt 0pt 19pt"><span style=3D"font-size:10.5pt;fo=
+nt-family:Arial;color:rgb(68,68,68);background-color:transparent;font-varia=
+nt-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;wh=
+ite-space:pre-wrap">The above copyright notice and this permission notice s=
+hall be included in all copies or substantial portions of the Software.</sp=
+an></p><p dir=3D"ltr" style=3D"line-height:1.38;background-color:rgb(252,25=
+2,252);margin-top:0pt;margin-bottom:19pt"><span style=3D"font-size:10.5pt;f=
+ont-family:Arial;color:rgb(68,68,68);background-color:transparent;font-vari=
+ant-numeric:normal;font-variant-east-asian:normal;vertical-align:baseline;w=
+hite-space:pre-wrap">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WA=
+RRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WA=
+RRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRIN=
+GEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR AN=
+Y CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT=
+ OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR T=
+HE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></p></span><br class=3D"gma=
+il-Apple-interchange-newline"></div></div>
+
+--000000000000e8266e05ac68c43a--

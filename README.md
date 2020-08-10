@@ -15,9 +15,7 @@ Prolog for parsing, assigning meaning and querying.
 
 ## Legal
 
-The copyright is as far as we know   with  the original authors and made
-available under a classical _academic use license_. See `LICENSE` in the
-`prolog/chat80` directory. The content of that  file was copied from the
-Python [NLTK data package](https://www.kaggle.com/nltkdata/chat-80/home)
-that includes the chat80 files.
+On August 10 2020, the code was re-licensed on request from the original
+authors David H. D. Warren and Fernando   C.  N. Pereira on request from
+Vijay Saraswat.  CHAT-80 is now available under the MIT license.
 

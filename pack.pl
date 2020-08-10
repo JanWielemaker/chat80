@@ -1,5 +1,5 @@
 name(chat80).
-version('1.0').
+version('1.1').
 title('Classic CHAT80 Prolog natural language application').
 keywords(['NLP', 'world']).
 author( 'Fernando C.N. Pereira', 'unknown@unknown' ).

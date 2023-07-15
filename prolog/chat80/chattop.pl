@@ -216,6 +216,10 @@ test_chat(_).
 test :-
 	time(rtest_chats(20)).
 
+% run a specific sentence
+test_chat(N, Sentence, CorrectAnswer) :-
+	ed(N,Sentence,CorrectAnswer),
+	process(Sentence,CorrectAnswer,_Status,_Times).
 					% added JW
 rtest_chats(0) :- !.
 rtest_chats(N) :-

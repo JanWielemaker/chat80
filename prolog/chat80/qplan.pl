@@ -46,7 +46,7 @@
    freevars(+,?),
    best_goal(+,+,+,?,?,-),
    instantiate(+,+,-),
-   instantiate0(+,+,-),
+   instantiate0(+,+,+,-),
    recombine(+,+,-),
    incorporate(+,+,+,+,+,-),
    incorporate0(+,+,+,+,-),

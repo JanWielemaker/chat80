@@ -76,7 +76,7 @@ complex(\+P) :- complex(P).
 :-mode yesno(+).         :-mode replies(+).
 :-mode reply(+).
 :-mode seto(?,+,-).
-:-mode satisfy(+).
+:-mode satisfy(+,-,?,?).
 :-mode pickargs(+,+,+).
 :-mode pick(+,?).
 

@@ -321,9 +321,10 @@ hi(File) :-
       end(File).
 
 ask(user,P) :- !,
-   write('Question: '),
-   ttyflush,
-   read_in(P).
+   setup_call_cleanup(
+       prompt(Old, 'Question: '),
+       read_in(P),
+       prompt(_, Old)).
 ask(File,P) :-
    seeing(Old),
    see(File),

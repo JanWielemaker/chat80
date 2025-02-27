@@ -552,7 +552,8 @@ check_words([Word|Words],[RevWord|RevWords]) :-
 
 check_word(Word,Word) :- word(Word), !.
 check_word(Word,NewWord) :-
-   display('? '), display(Word), display(' -> (!. to abort) '), ttyflush,
+   format(atom(Prompt), '? ~w -> (!. to abort) ', [Word]),
+   prompt1(Prompt),
    read(NewWord0),
    NewWord0 \== !,
    check_word(NewWord0,NewWord).

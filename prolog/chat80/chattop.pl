@@ -371,19 +371,18 @@ end(F) :-
    close(F).
 
 control([bye,'.']) :- !,
-   display('Cheerio.'),
-   nl.
+   format('Cheerio.~n').
 control([trace,'.']) :- !,
    tracing ~= on,
-   display('Tracing from now on!'), nl, fail.
+   format('Tracing from now on!~n'), fail.
 control([do,not,trace,'.']) :- !,
    tracing ~= off,
-   display('No longer tracing.'), nl, fail.
+   format('No longer tracing.~n'), fail.
 control([do,mini,demo,'.']) :- !,
-   display('Executing mini demo...'), nl,
+   format('Executing mini demo...~n'),
    demo(mini), fail.
 control([do,main,demo,'.']) :- !,
-   display('Executing main demo...'), nl,
+   format('Executing main demo...~n'),
    demo(main), fail.
 control([test,chat,'.']) :- !,
    test_chat, fail.
@@ -415,11 +414,11 @@ process(_) :-
    failure.
 
 failure :-
-   display('I don''t understand!'), nl.
+   format('I don''t understand!~n').
 
 report(Item,Label,Time,Mode) :-
    tracing =: on, !,
-   nl, write(Label), write(': '), write(Time), write('msec.'), nl,
+   format('~N~w: ~wmsec.~n', [Label, Time]),
    report_item(Mode,Item).
 report(_,_,_,_).
 
@@ -428,9 +427,6 @@ report_item(expr,Item) :-
    write_tree(Item), nl.
 report_item(tree,Item) :-
    print_tree(Item), nl.
-%JW: pp_quant/2 is not defined
-%report_item(quant,Item) :-
-%   pp_quant(Item,2), nl.
 
 quote(A&R) :-
    atom(A), !,

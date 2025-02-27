@@ -321,6 +321,7 @@ hi(File) :-
       end(File).
 
 ask(user,P) :- !,
+   prompt1('Question: '),
    setup_call_cleanup(
        prompt(Old, 'Question: '),
        read_in(P),

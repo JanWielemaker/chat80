@@ -36,7 +36,9 @@
             role/3,
             s_all/1,
             subj_case/1,
-            verb_case/1
+            verb_case/1,
+            is_trace/1,
+            np_no_trace/1
           ]).
 
 % Normal form masks

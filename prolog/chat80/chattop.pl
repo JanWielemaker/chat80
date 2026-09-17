@@ -9,8 +9,12 @@
 % CHATTOP.PL
 
 :- module(chattop,
-          [ test_chat/0,
+	  [ hi/0,
+	    hi/1,				% +Stream
+
+	    test_chat/0,
 	    test_chat/1,			% +Example
+	    test_chat/3,			% +N, -Sentence, -CorrectAnswer
 	    rtest_chats/1,			% +Times
 
 	    answer/2,
@@ -18,7 +22,7 @@
             process/3,
             quote/1,
             simplify/2
-          ]).
+	  ]).
 :- use_module(newdic, [word/1]).
 :- use_module(newg, [sentence/5]).
 :- use_module(ptree, [print_tree/1]).
@@ -323,11 +327,6 @@ check_answer(_,_,'wrong answer').
 	Top level for runtime version, and interactive demonstrations
    ---------------------------------------------------------------------- */
 
-runtime_entry(start) :-
-   version,
-   format(user,'~nChat Demonstration Program~n~n',[]),
-   hi.
-
 hi :-
    hi(user).
 
@@ -571,18 +570,12 @@ check_word(Word,NewWord) :-
    NewWord0 \== !,
    check_word(NewWord0,NewWord).
 
-:- mode ~=(+,+), =+(+,-), =:(+,?).
+:- mode ~=(+,+), =:(+,?).
 
 Var ~= Val :-
  ( recorded(Var,val(_),P), erase(P)
  ; true), !,
  recordz(Var,val(Val),_).
-
-Var =+ Val :-
- ( recorded(Var,val(Val0),P), erase(P)
- ; Val0 is 0), !,
-   Val is Val0+1,
-   recordz(Var,val(Val),_).
 
 Var =: Val :-
    recorded(Var,val(Val),_).

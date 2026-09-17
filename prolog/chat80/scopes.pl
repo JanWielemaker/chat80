@@ -277,9 +277,6 @@ governs(det(Strong),Det) :-
    strong0(Strong),
    weak(Det).
 
-strong(det(Det)) :-
-   strong0(Det).
-
 strong0(each).
 strong0(any).
 

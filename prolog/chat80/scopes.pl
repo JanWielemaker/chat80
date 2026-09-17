@@ -20,6 +20,12 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(scopes,
+          [ clausify/2
+          ]).
+:- use_module(slots, [conc/3]).
+:- use_module(chatops).
+
 clausify(question(V0,P),(answer(V):-B)) :-
    quantify(P,Quants,[],R0),
    split_quants(question(V0),Quants,HQuants,[],BQuants,[]),

@@ -20,6 +20,10 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(countr,
+          [ country/10
+          ]).
+
 % Facts about countries.
 % ---------------------
 

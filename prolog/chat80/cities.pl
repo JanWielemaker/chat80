@@ -20,6 +20,10 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(cities,
+          [ city/3
+          ]).
+
 % Facts about cities.
 % ------------------
 city(belle_mead,united_states,8).

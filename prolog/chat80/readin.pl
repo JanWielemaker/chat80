@@ -20,6 +20,11 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(readin,
+          [ read_in/1
+          ]).
+:- use_module(chatops).
+
 /* Read a sentence */
 
  :- mode initread(-).

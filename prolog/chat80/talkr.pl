@@ -22,7 +22,15 @@
 
 /* Simplifying and executing the logical form of a NL query. */
 
-:-public write_tree/1, answer/1.
+:- module(talkr,
+          [ answer/1,
+            holds/2,
+            seto/3,
+            write_tree/1
+          ]).
+:- use_module(world0, [database/1]).
+:- use_module(chatops).
+:- use_module(library(edinburgh), [display/1]).
 
 :-mode write_tree(+).
 :-mode wt(+,+).

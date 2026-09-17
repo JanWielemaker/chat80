@@ -20,14 +20,18 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(ptree,
+          [ print_tree/1
+          ]).
+:- use_module(chattop, [quote/1]).
+:- use_module(chatops).
+
 /* Print term as a tree */
 
  :- mode print_tree(+).
  :- mode pt(+,+).
  :- mode pl(+,+).
  :- mode as_is(+).
-
- :- public print_tree/1.
 
 print_tree(T) :-
    numbervars(T,1,_),

@@ -20,10 +20,14 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(qplan,
+          [ qplan/2
+          ]).
+:- use_module(ndtabl, [nd/3, nd/4, nd/5]).
+:- use_module(chatops).
+
 % QPLAN - supplies the control information (ie. sequencing and cuts) needed
 %         for efficient execution of a query.
-
-:-public qplan/2.
 
 :-mode
    qplan(+,-),

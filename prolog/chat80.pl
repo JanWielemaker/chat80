@@ -35,10 +35,20 @@
             test_chat/0,
 	    rtest_chats/1                       % +Times
 	  ]).
-:- require([ (mode)/1,
-             display/1
-           ]).
-:- ensure_loaded(chat80/chat).
+
+% TODO: Actually fix the these.
+:- style_check(-singleton).
+:- style_check(-discontiguous).
+
+:- use_module(chat80/chattop,
+              [ answer/2, process/3, simplify/2, ed/3,
+                test_chat/0, rtest_chats/1
+              ]).
+:- use_module(chat80/newg, [sentence/5]).
+:- use_module(chat80/slots, [i_sentence/2]).
+:- use_module(chat80/scopes, [clausify/2]).
+:- use_module(chat80/qplan, [qplan/2]).
+:- use_module(chat80/ptree, [print_tree/1]).
 
 /** <module> CHAT80 driver for SWI-Prolog
 */

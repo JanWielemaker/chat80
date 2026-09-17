@@ -20,6 +20,34 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(templa,
+          [ adjunction/4,
+            aggr_adj/4,
+            aggr_noun/4,
+            attribute/6,
+            chat_sign/2,
+            comparator/5,
+            intrans/6,
+            measure/4,
+            meta_noun/7,
+            name_template/2,
+            property/9,
+            restriction/4,
+            thing/6,
+            trans/9,
+            units/2
+          ]).
+:- use_module(world0,
+              [ circle_of_latitude/1,
+                city/1,
+                continent/1,
+                country/1,
+                region/1,
+                river/1,
+                seamass/1
+              ]).
+:- use_module(chatops).
+
 /* Nouns */
 
 property(area,measure&area,X,feature&place&_,Y,area(Y,X),[],_,_).

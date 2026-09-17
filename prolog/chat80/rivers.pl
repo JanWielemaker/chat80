@@ -20,6 +20,10 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(rivers,
+          [ river/2
+          ]).
+
 % Facts about rivers.
 % ------------------
 

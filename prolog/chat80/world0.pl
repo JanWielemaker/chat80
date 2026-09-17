@@ -20,6 +20,25 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(world0,
+          [ circle_of_latitude/1,
+            city/1,
+            continent/1,
+            country/1,
+            database/1,
+            ratio/4,
+            region/1,
+            river/1,
+            seamass/1
+          ]).
+:- use_module(aggreg, [aggregate/3, card/2, one_of/2, ratio/3]).
+:- use_module(border, [borders/2]).
+:- use_module(cities, [city/3]).
+:- use_module(contai, [contains/2]).
+:- use_module(countr, [country/10]).
+:- use_module(rivers, [river/2]).
+:- use_module(library(lists), [last/2]).
+
 % Data for the World Database.
 % ---------------------------
 

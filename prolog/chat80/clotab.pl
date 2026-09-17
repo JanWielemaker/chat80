@@ -20,6 +20,25 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(clotab,
+          [ adv/1,
+            compl_case/1,
+            do_trace/1,
+            do_trace/2,
+            empty/1,
+            is_adv/1,
+            is_pp/1,
+            is_pred/1,
+            minus/3,
+            my_plus/3,
+            np_all/1,
+            prep_case/1,
+            role/3,
+            s_all/1,
+            subj_case/1,
+            verb_case/1
+          ]).
+
 % Normal form masks
 
 is_pp(#(1,_,_,_)).

@@ -20,6 +20,30 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(slots,
+          [ conc/3,
+            i_sentence/2
+          ]).
+:- use_module(newdic, [verb_type/2]).
+:- use_module(templa,
+              [ adjunction/4,
+                aggr_adj/4,
+                aggr_noun/4,
+                attribute/6,
+                chat_sign/2,
+                comparator/5,
+                intrans/6,
+                measure/4,
+                meta_noun/7,
+                name_template/2,
+                property/9,
+                restriction/4,
+                thing/6,
+                trans/9,
+                units/2
+              ]).
+:- use_module(chatops).
+
 i_sentence(q(S),question([],P)) :-
    i_s(S,P,[],0).
 i_sentence(whq(X,S),question([X],P)) :-

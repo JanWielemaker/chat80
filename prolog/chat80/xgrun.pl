@@ -20,6 +20,12 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(xgrun,
+          [ terminal/5,
+            virtual/3
+          ]).
+:- use_module(chatops).
+
 :- mode terminal(?,+,?,+,?),
         gap(+),
         virtual(+,+,?).

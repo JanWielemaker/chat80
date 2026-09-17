@@ -23,6 +23,11 @@
 % Inversion of the 'in' relation.
 % ------------------------------
 
+:- module(contai,
+          [ contains/2
+          ]).
+:- use_module(chatops).
+
 :-mode contains0(+,?).
 
 contains(X,Y) :- contains0(X,Y).

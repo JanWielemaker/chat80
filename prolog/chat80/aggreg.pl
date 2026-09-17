@@ -20,7 +20,14 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-:- public aggregate/3, one_of/2, ratio/3, card/2.
+:- module(aggreg,
+          [ aggregate/3,
+            card/2,
+            one_of/2,
+            ratio/3
+          ]).
+:- use_module(world0, [ratio/4]).
+:- use_module(chatops).
 
 :- mode aggregate(+,+,?),
         dimensioned(+),

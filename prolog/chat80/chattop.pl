@@ -8,7 +8,27 @@
 
 % CHATTOP.PL
 
-:-public hi/0, hi/1, quote/1.
+:- module(chattop,
+          [ test_chat/0,
+	    test_chat/1,			% +Example
+	    rtest_chats/1,			% +Times
+
+	    answer/2,
+            ed/3,
+            process/3,
+            quote/1,
+            simplify/2
+          ]).
+:- use_module(newdic, [word/1]).
+:- use_module(newg, [sentence/5]).
+:- use_module(ptree, [print_tree/1]).
+:- use_module(qplan, [qplan/2]).
+:- use_module(readin, [read_in/1]).
+:- use_module(scopes, [clausify/2]).
+:- use_module(slots, [i_sentence/2]).
+:- use_module(talkr, [answer/1, holds/2, seto/3, write_tree/1]).
+:- use_module(chatops).
+:- use_module(library(quintus), [otherwise/0]).
 
 :- mode control(+),
 	doing(+,+),
@@ -212,9 +232,6 @@ test_chat(N) :-
 	  show_results(N,Status,Times),
 	fail.
 test_chat(_).
-
-test :-
-	time(rtest_chats(20)).
 
 % run a specific sentence
 test_chat(N, Sentence, CorrectAnswer) :-

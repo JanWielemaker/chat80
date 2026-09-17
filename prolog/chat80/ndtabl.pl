@@ -20,6 +20,13 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(ndtabl,
+          [ nd/3,
+            nd/4,
+            nd/5
+          ]).
+:- use_module(chatops).
+
 % NDTABL - Meta-information about database relations.
 
 :-mode

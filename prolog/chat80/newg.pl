@@ -20,6 +20,53 @@
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+:- module(newg,
+          [ sentence/5
+          ]).
+:- use_module(clotab,
+              [ adv/1,
+                compl_case/1,
+                do_trace/1,
+                do_trace/2,
+                empty/1,
+                is_adv/1,
+                is_pp/1,
+                is_pred/1,
+                minus/3,
+                my_plus/3,
+                np_all/1,
+                prep_case/1,
+                role/3,
+                s_all/1,
+                subj_case/1,
+                verb_case/1
+              ]).
+:- use_module(newdic,
+              [ adj/2,
+                adverb/1,
+                conj/1,
+                det/4,
+                int_art/4,
+                int_pron/2,
+                loc_pred/2,
+                name/1,
+                noun_form/3,
+                number/3,
+                pers_pron/5,
+                poss_pron/4,
+                prep/1,
+                quantifier_pron/3,
+                rel_adj/2,
+                rel_pron/2,
+                sup_adj/2,
+                terminator/2,
+                verb_form/4,
+                verb_type/2,
+                ~ / 1
+              ]).
+:- use_module(xgrun, [terminal/5, virtual/3]).
+:- use_module(chatops).
+
 sentence(B,C,D,E,F) :-
    declarative(B,C,G,E,H),
    terminator(.,G,D,H,F).
